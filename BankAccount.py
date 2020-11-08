@@ -23,3 +23,23 @@ class BankAccount:
         balance = self.balance
         interest = balance * 0.00083
         self.balance = self.balance + interest
+
+    def print_receipt(self):
+        stars = []
+
+        for i in str(self.account_number):
+            stars.append("*")
+        str_account_num = str(self.account_number)
+        stars[len(stars)-1] = str_account_num[len(stars)-1]
+        stars[len(stars)-2] = str_account_num[len(stars)-2]
+        stars[len(stars)-3] = str_account_num[len(stars)-3]
+        stars[len(stars)-4] = str_account_num[len(stars)-4]
+
+        str_stars = ""
+        str_stars = str_stars.join(stars)
+        print(f"""
+            {self.full_name}
+            Account No.: {str_stars}
+            Routing No.: {self.routing_number}
+            Balance: {self.balance}
+        """)
