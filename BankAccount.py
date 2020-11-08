@@ -15,3 +15,6 @@ class BankAccount:
         if amount > self.balance:
             print("Insufficient funds.")
             self.balance -= 10
+
+    def get_balance(self):
+        print(f"Balance: ${self.balance}")
