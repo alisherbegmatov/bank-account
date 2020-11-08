@@ -14,6 +14,7 @@ class BankAccount:
 # Defined Withdraw.
     def withdraw(self, amount):
         self.balance -= amount
+        self.balance -= amount * 0.00083
         print(f"Amount Withdrawn: ${amount}")
         if amount > self.balance:
             print("Insufficient funds.")
@@ -69,4 +70,29 @@ user_account.add_interest()
 user_account.deposit(10000)
 user_account.print_receipt()
 
-# Alisher Begmatov.
+# Bank ATM
+while True:
+
+    print("Welcome to Bank ATM")
+    action = input("Select Action: (1) Get Balance. (2) Deposit. (3) Withdraw. ")
+    
+    if action == str(1):
+        print (alisher_account.print_receipt())
+
+    elif action == str(2):
+    
+        deposit = input("Please enter your amount to deposit: ")
+        print (alisher_account.deposit (int(deposit)))
+
+    elif action == str(3):
+
+        withdraw = input("Please enter your amount to withdraw (Fee is ): ")
+        print (alisher_account.withdraw (int(withdraw)))
+
+    elif action == "Exit":
+        pass
+
+    else:
+            print("Please select one of the following options")
+
+# Alisher Begmatov
